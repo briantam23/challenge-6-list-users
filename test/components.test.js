@@ -16,6 +16,9 @@ describe('The React Components', () => {
     
         before('Create component', () => appWrapper = shallow(<App/>));
     
-        it('renders a <div>', () => expect(appWrapper.find('div')).to.have.length(1));
-    })
-})
+        it('renders a <div>', () => {
+            expect(appWrapper.find('div')).to.have.length(1);
+        });
+    });
+
+});
