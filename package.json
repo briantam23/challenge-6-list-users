@@ -2,6 +2,16 @@
   "name": "challenge-6-list-users",
   "version": "0.1.0",
   "private": true,
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-3"
+    ],
+    "plugins": [
+      "transform-class-properties"
+    ]
+  },
   "dependencies": {
     "axios": "^0.19.0",
     "prop-types": "^15.6.0",
@@ -16,16 +26,27 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "mocha ./test/*.test.js --require babel-polyfill --require ignore-styles --require babel-core/register",
+    "test:dev": "npm test -- --watch",
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint ./"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "chai": "^4.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^4.14.0",
     "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-jasmine": "^2.9.1",
-    "eslint-plugin-react": "^7.5.1"
+    "eslint-plugin-react": "^7.5.1",
+    "ignore-styles": "^5.0.1",
+    "mocha": "^6.2.0"
   }
 }

@@ -9,7 +9,7 @@ const App = () => (
     <div className="App">
         <Header appName="SuperDate"/>
         <p className="App-intro">
-    To get started, edit <code>src/App.js</code> and save to reload.
+            To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <UserList/>
     </div>

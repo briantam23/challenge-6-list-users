@@ -1,19 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 
 
-class Header extends Component {
-    static propTypes = {
-        appName: PropTypes.string,
-    }
+const Header = ({ appName }) => (
+    <header className="App-header">
+        <h1>{ appName }</h1>
+    </header>
+);
 
-    render() {
-        const { appName } = this.props;
-        return(
-            <header className="App-header">
-                <h1>{ appName }</h1>
-            </header>);
-    }
-}
 
 export default Header;

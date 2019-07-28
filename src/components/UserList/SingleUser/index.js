@@ -1,26 +1,39 @@
 import React from 'react';
+import { properCase } from '../../../util';
 
 
-const SingleUser = ({ user }) => (
-    <div className="user">
-        <div className="picture">
-            <img src={ user.picture.large } alt="Joy Noel"/>
+const SingleUser = ({ user }) => {
+
+    const { picture, email, phone } = user;
+    let { title, first, last } = user.name;
+
+    if(!title) return null;
+
+    title = properCase(title);
+    first = properCase(first);
+    last = properCase(last);
+
+    return(
+        <div className="user">
+            <div className="picture">
+                <img src={ picture.large } alt={ first + ' ' + last }/>
+            </div>
+            <div className="info">
+                <div className="name">
+                    <span>{ title } </span>
+                    <span>{ first } </span>
+                    <span>{ last } </span>
+                </div>
+                <div className="email">
+                    <span>{ email }</span>
+                </div>
+                <div className="phone">
+                    <span>{ phone }</span>
+                </div>
+            </div>
         </div>
-        <div className="info">
-            <div className="name">
-                <span>Mrs </span>
-                <span>Joy </span>
-                <span>Noel </span>
-            </div>
-            <div className="email">
-                <span>joy.noel@example.com</span>
-            </div>
-            <div className="phone">
-                <span>(576)-670-5855</span>
-            </div>
-        </div>
-    </div>
-)
+    );
+};
     
 
 export default SingleUser;
